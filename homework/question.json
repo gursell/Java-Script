@@ -1,0 +1,67 @@
+{
+  "questionnaire": [
+    {
+      "question": "Do you like walking a lot?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Do you smoke cigarette?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Are you a clean person?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Do you like noise?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Do you want to be calm?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Do you like interaction?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Are you extrovert?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Can you spend money a lot?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Have you animal experience?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Do you like playing with animals?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Are you a quiet person?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Do you have time free time?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Are you merciful?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Have you small cottage for summer?",
+      "options": ["yes", "no"]
+    },
+     {
+      "question": "Do you have time free time?",
+      "options": ["yes", "no"]
+    }
+
+  ]
+
+
+}
