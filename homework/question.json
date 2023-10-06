@@ -4,98 +4,98 @@
       "question": "Do you like walking a lot?",
       "point": {
         "Yes": {"dog": 3, "cat": 2, "bunny": 2, "fish": 0},
-        "No": {"dog": 1, "cat": 2, "bunny": 2, "fish": 4}
+        "No": {"dog": 1, "cat": 2, "bunny": 2, "fish": 2}
       }
     },
 {
       "question": "Do you smoke cigarette?",
             "point": {
-        "Yes": {"dog": 2, "cat": 1, "bunny": 3, "fish": 4},
-        "No": {"dog": 2, "cat": 3, "bunny": 1, "fish": 0}
+        "Yes": {"dog": 0, "cat": 1, "bunny": 3, "fish": 3},
+        "No": {"dog": 2, "cat": 3, "bunny": 1, "fish": 1}
       }
     },
      {
       "question": "Are you a clean person?",
             "point": {
-        "Yes": {"dog": 1, "cat": 2, "bunny": 3, "fish": 4},
-        "No": {"dog": 3, "cat": 2, "bunny": 1, "fish": 0}
+        "Yes": {"dog": 1, "cat": 2, "bunny": 3, "fish": 1},
+        "No": {"dog": 3, "cat": 2, "bunny": 1, "fish": 1}
       }
     },
      {
       "question": "Do you like noise?",
             "point": {
-        "Yes": {"dog": 1, "cat": 2, "bunny": 3, "fish": 0},
-        "No": {"dog": 3, "cat": 2, "bunny": 1, "fish": 4}
+        "Yes": {"dog": 3, "cat": 2, "bunny": 1, "fish": 1},
+        "No": {"dog": 1, "cat": 2, "bunny": 1, "fish": 3}
       }
     },
      {
       "question": "Do you want to be calm?",
             "point": {
         "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
-        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 2}
       }
     },
      {
       "question": "Do you like interaction?",
             "point": {
         "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
-        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 2}
       }
     },
      {
       "question": "Are you extrovert?",
             "point": {
         "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
-        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 2}
       }
     },
      {
       "question": "Can you spend money a lot?",
             "point": {
         "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
-        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 2}
       }
     },
      {
       "question": "Have you animal experience?",
             "point": {
         "Yes": {"dog": 2, "cat": 2, "bunny": 2, "fish": 1},
-        "No": {"dog": 2, "cat": 2, "bunny": 2, "fish": 3}
+        "No": {"dog": 2, "cat": 2, "bunny": 2, "fish": 1}
       }
     },
      {
       "question": "Do you like playing with animals?",
             "point": {
-        "Yes": {"dog": 3, "cat": 3, "bunny": 2, "fish": 0},
-        "No": {"dog": 1, "cat": 1, "bunny": 2, "fish": 4}
+        "Yes": {"dog": 3, "cat": 2, "bunny": 2, "fish": 0},
+        "No": {"dog": 1, "cat": 1, "bunny": 2, "fish": 3}
       }
     },
      {
       "question": "Are you a quiet person?",
             "point": {
-        "Yes": {"dog": 1, "cat": 3, "bunny": 2, "fish": 4},
-        "No": {"dog": 3, "cat": 1, "bunny": 2, "fish": 0}
+        "Yes": {"dog": 1, "cat": 3, "bunny": 2, "fish": 1},
+        "No": {"dog": 3, "cat": 1, "bunny": 2, "fish": 1}
       }
     },
      {
       "question": "Do you have free time?",
             "point": {
-        "Yes": {"dog": 2, "cat": 2, "bunny": 1, "fish": 0},
-        "No": {"dog": 2, "cat": 2, "bunny": 3, "fish": 4}
+        "Yes": {"dog": 3, "cat": 2, "bunny": 1, "fish": 1},
+        "No": {"dog": 2, "cat": 2, "bunny": 2, "fish": 1}
       }
     },
      {
       "question": "Are you merciful?",
             "point": {
         "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
-        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 2}
       }
     },
      {
       "question": "Have you small cottage for summer?",
             "point": {
-        "Yes": {"dog": 2, "cat": 1, "bunny": 4, "fish": 0},
-        "No": {"dog": 2, "cat": 3, "bunny": 0, "fish": 4}
+        "Yes": {"dog": 2, "cat": 1, "bunny": 3, "fish": 1},
+        "No": {"dog": 2, "cat": 3, "bunny": 0, "fish": 2}
       }
     }
 
