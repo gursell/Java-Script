@@ -1,6 +1,7 @@
-{
-  "Dog": 0,
-  "Cat": 0,
-  "Bunny": 0,
-  "Fish": 0
-}
+[
+  {
+    "name": "efe",
+    "date": "2023-10-06T21:11:54.070Z",
+    "result": "According to your answers, best-fitting animal: fish."
+  }
+]

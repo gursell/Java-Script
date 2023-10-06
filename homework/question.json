@@ -2,101 +2,100 @@
   "questions": [
     {
       "question": "Do you like walking a lot?",
-      "answer": {
-        "yes": {"Dog": 4, "Cat": 3, "Bunny": 2, "Fish": 0},
-        "no": {"Dog": 0, "Cat": 1, "Bunny": 2, "Fish": 4}
+      "point": {
+        "Yes": {"dog": 3, "Cat": 2, "bunny": 2, "fish": 0},
+        "No": {"dog": 1, "Cat": 2, "bunny": 2, "fish": 4}
       }
-
     },
 {
       "question": "Do you smoke cigarette?",
-            "answer": {
-        "yes": {"Dog": 0, "Cat": 1, "Bunny": 3, "Fish": 4},
-        "no": {"Dog": 4, "Cat": 3, "Bunny": 1, "Fish": 0}
+            "point": {
+        "Yes": {"dog": 2, "cat": 1, "bunny": 3, "fish": 4},
+        "No": {"dog": 2, "cat": 3, "bunny": 1, "fish": 0}
       }
     },
      {
       "question": "Are you a clean person?",
-            "answer": {
-        "yes": {"Dog": 0, "Cat": 2, "Bunny": 3, "Fish": 4},
-        "no": {"Dog": 4, "Cat": 2, "Bunny": 1, "Fish": 0}
+            "point": {
+        "Yes": {"dog": 1, "cat": 2, "bunny": 3, "fish": 4},
+        "No": {"dog": 3, "cat": 2, "bunny": 1, "fish": 0}
       }
     },
      {
       "question": "Do you like noise?",
-            "answer": {
-        "yes": {"Dog": 4, "Cat": 2, "Bunny": 3, "Fish": 0},
-        "no": {"Dog": 0, "Cat": 2, "Bunny": 1, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 1, "cat": 2, "bunny": 3, "fish": 0},
+        "No": {"dog": 3, "cat": 2, "bunny": 1, "fish": 4}
       }
     },
      {
       "question": "Do you want to be calm?",
-            "answer": {
-        "yes": {"Dog": 4, "Cat": 3, "Bunny": 2, "Fish": 0},
-        "no": {"Dog": 0, "Cat": 1, "Bunny": 2, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
       }
     },
      {
       "question": "Do you like interaction?",
-            "answer": {
-        "yes": {"Dog": 4, "Cat": 3, "Bunny": 2, "Fish": 0},
-        "no": {"Dog": 0, "Cat": 1, "Bunny": 2, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
       }
     },
      {
       "question": "Are you extrovert?",
-            "answer": {
-        "yes": {"Dog": 4, "Cat": 3, "Bunny": 2, "Fish": 0},
-        "no": {"Dog": 0, "Cat": 1, "Bunny": 2, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
       }
     },
      {
       "question": "Can you spend money a lot?",
-            "answer": {
-        "yes": {"Dog": 4, "Cat": 3, "Bunny": 2, "Fish": 0},
-        "no": {"Dog": 0, "Cat": 1, "Bunny": 2, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
       }
     },
      {
       "question": "Have you animal experience?",
-            "answer": {
-        "yes": {"Dog": 3, "Cat": 2, "Bunny": 2, "Fish": 1},
-        "no": {"Dog": 1, "Cat": 2, "Bunny": 2, "Fish": 3}
+            "point": {
+        "Yes": {"dog": 2, "cat": 2, "bunny": 2, "fish": 1},
+        "No": {"dog": 2, "cat": 2, "bunny": 2, "fish": 3}
       }
     },
      {
       "question": "Do you like playing with animals?",
-            "answer": {
-        "yes": {"Dog": 4, "Cat": 3, "Bunny": 2, "Fish": 0},
-        "no": {"Dog": 0, "Cat": 1, "Bunny": 2, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 3, "cat": 3, "bunny": 2, "fish": 0},
+        "No": {"dog": 1, "cat": 1, "bunny": 2, "fish": 4}
       }
     },
      {
       "question": "Are you a quiet person?",
-            "answer": {
-        "yes": {"Dog": 0, "Cat": 3, "Bunny": 2, "Fish": 4},
-        "no": {"Dog": 4, "Cat": 1, "Bunny": 2, "Fish": 0}
+            "point": {
+        "Yes": {"dog": 1, "cat": 3, "bunny": 2, "fish": 4},
+        "No": {"dog": 3, "cat": 1, "bunny": 2, "fish": 0}
       }
     },
      {
-      "question": "Do you have time free time?",
-            "answer": {
-        "yes": {"Dog": 3, "Cat": 2, "Bunny": 1, "Fish": 0},
-        "no": {"Dog": 1, "Cat": 2, "Bunny": 3, "Fish": 4}
+      "question": "Do you have free time?",
+            "point": {
+        "Yes": {"dog": 2, "cat": 2, "bunny": 1, "fish": 0},
+        "No": {"dog": 2, "cat": 2, "bunny": 3, "fish": 4}
       }
     },
      {
       "question": "Are you merciful?",
-            "answer": {
-        "yes": {"Dog": 1, "Cat": 3, "Bunny": 2, "Fish": 0},
-        "no": {"Dog": 3, "Cat": 1, "Bunny": 2, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 2, "cat": 3, "bunny": 2, "fish": 0},
+        "No": {"dog": 2, "cat": 1, "bunny": 2, "fish": 4}
       }
     },
      {
       "question": "Have you small cottage for summer?",
-            "answer": {
-        "yes": {"Dog": 2, "Cat": 1, "Bunny": 4, "Fish": 0},
-        "no": {"Dog": 2, "Cat": 3, "Bunny": 0, "Fish": 4}
+            "point": {
+        "Yes": {"dog": 2, "cat": 1, "bunny": 4, "fish": 0},
+        "No": {"dog": 2, "cat": 3, "bunny": 0, "fish": 4}
       }
     }
 

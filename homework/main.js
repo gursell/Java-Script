@@ -1,3 +1,4 @@
+/*
 //Reads user input
 const prompt = require('prompt-sync')({ sigint: true });
 
@@ -17,80 +18,192 @@ const dateTime = todaysDate.toString();
 console.log("Your startdate : ", dateTime);
 console.log("Answer your answers with yes/no please");
 
-  console.log(userName);
-  console.log(todaysDate);
-
 
   function loadQuestions() {
     try {
-      const data = fs.readFileSync("./questions.json");
-      return JSON.parse(data);
+      const data = fs.readFileSync("./question.json");
+      return JSON.parse(data).question;
     } catch (error) {
       console.error("Error loading questions:", error.message);
       return [];
     }
   }
 
-  function saveAnswers(answers) {
+  function saveAnswers(point) {
     try {
-      fs.writeFileSync('./answers.json', JSON.stringify(answers, null, 2));
+      fs.writeFileSync('./answers.json', JSON.stringify(point, null, 2));
     } catch (error) {
       console.error('Failed to save results:', error);
     }
   }
 
-  const questions = loadQuestions();
-
   // Define a pet score object to keep track of scores for each pet.
-  const petScores = {
+  const point = {
     Dog: 0,
     Cat: 0,
     Bunny: 0,
     Fish: 0,
   };
 
-  for (let index = 0; index < question.questions.length; index++) {
-    let running = true;
+    const questions = loadQuestions();
 
-    while (running) {
-      const userAnswer = prompt(question.questions[index].question).toLowerCase();
+for (let index = 0; index < questions.length; index++) {
+  let running = true;
 
-      if (userAnswer === "yes") {
-        running = false;
-      } else if (userAnswer === "no") {
-        running = false;
-      } else {
-        console.log("Wrong answer");
-      }
-    }
+  while (running) {
+    const userAnswer = prompt(questions[index].question + ' (Yes/No)').toLowerCase();
 
-    // Update the pet scores based on the user's answers.
-    const userAnswers = question.questions[index].answers;
+    if (userAnswer === "yes" || userAnswer === "no") {
+      const animal = userAnswer === "yes" ? questions[index].point.yes : questions[index].point.no;
+      Object.keys(animal).forEach((pet) => {
+        point[pet] += animal[pet];
 
-    for (const pet in userAnswers) {
-      if (userAnswers.hasOwnProperty(pet)) {
-        if (userAnswers[pet].toLowerCase() === "yes") {
-          petScores[pet]++;
-        }
-      }
+      });
+      running = false;
+    } else {
+      console.log("Wrong answer. Please answer with yes/no");
     }
   }
+}
+const pet = ['Dog', 'Cat', 'Bunny', 'Fish'];
 
-  // Find the pet with the highest score.
-  let bestPet = "";
-  let highestScore = -1;
+for (const animal of pet) {
+  console.log(`${animal}: ${point[animal]} point`);
+}
 
-  for (const pet in petScores) {
-    if (petScores.hasOwnProperty(pet)) {
-      if (petScores[pet] > highestScore) {
-        highestScore = petScores[pet];
-        bestPet = pet;
-      }
+let totalpoint = 0;
+
+for (const animal of pet) {
+  totalpoint += point[animal];
+}
+const percentages = {};
+
+for (const animal of pet) {
+  const percentage = (point[animal] / questions.length) * 100;
+  percentages[animal] = percentage.toFixed(2);
+}
+  
+let bestPet = "";
+let maxpercent = 0;
+
+for (const animal of pet) {
+  if (parseFloat(percentages[animal]) > maxpercent) {
+    maxpercent = parseFloat(percentages[animal]);
+    bestPet = animal;
+  }
+}
+
+console.log(userName);
+console.log(todaysDate);
+
+console.log("According to your answers, best-fitting pet: ", bestPet);
+console.log("Percent match:", maxpercent.toFixed(2) + "%");
+
+const userAnswers = [{
+  name: userName,
+  date: todaysDate,
+  result: `According to your answers, best-fitting pet: ${bestPet}.`,
+}];
+
+saveAnswers(userAnswers);
+  */
+
+const prompt = require('prompt-sync')({ sigint: true });
+const fs = require('fs');
+
+console.log("Welcome. I hope your choice will fit you");
+
+const userName = prompt('What is your name?');
+const todaysDate = new Date();
+const dateTime= todaysDate.toString();
+console.log("Your start time: ", dateTime);
+console.log("Answer your answers with yes/no please");
+
+function loadQuestions() {
+  try {
+    const data = fs.readFileSync("./question.json", );
+    return JSON.parse(data).questions;
+  } catch (error) {
+    console.error("Error loading questions:", error);
+    return [];
+  }
+}
+
+function saveAnswers(point) {
+  try {
+    fs.writeFileSync('./answers.json', JSON.stringify(point, null, 2));
+  } catch (error) {
+    console.error('Failed to save results:', error);
+  }
+}
+
+const point = {
+  dog: 0,
+  cat: 0,
+  bunny: 0,
+  fish: 0,
+};
+
+const questions = loadQuestions();
+
+for (let index = 0; index < questions.length; index++) {
+  let running = true;
+  while (running) {
+    const userAnswer = prompt(questions[index].question + ' (Yes/No)').toLowerCase();
+    if (userAnswer === "yes" || userAnswer === "no") {
+      const animal = userAnswer === "ja" ? questions[index].point.Yes : questions[index].point.No;
+      Object.keys(animal).forEach((pet) => {
+        point[pet] += animal[pet];
+      });
+      running = false;
+    } else {
+      console.log("Wrong answer!Please answer with 'yes' or 'no'.");
     }
   }
+}
 
-console.log(`Based on your answers, the best pet for you is a ${bestPet}.`);
-saveAnswers(petScores);
+const pet = ['dog', 'cat', 'bunny', 'fish'];
+
+for (const animal of pet) {
+  console.log(`${animal}: ${point[animal]} point`);
+}
+
+let totalpoint = 0;
+
+for (const animal of pet) {
+  totalpoint += point[animal];
+}
+
+const percentages = {};
+
+for (const animal of pet) {
+  const percentage = (point[animal] / questions.length) * 100;
+  percentages[animal] = percentage.toFixed(2);
+}
+
+let bestPet = "";
+let highestpercentage = 0;
+
+for (const animal of pet) {
+  if (parseFloat(percentages[animal]) > highestpercentage) {
+    highestpercentage = parseFloat(percentages[animal]);
+    bestPet = animal;
+  }
+}
+
+console.log(userName);
+console.log(todaysDate);
+
+console.log("According to your answers, best-fitting animal: ", bestPet);
+console.log("Percentage matching:", highestpercentage.toFixed(2) + "%");
+
+const userAnswers = [{
+  name: userName,
+  date: todaysDate,
+  result: `According to your answers, best-fitting animal: ${bestPet}.`,
+}];
+
+saveAnswers(userAnswers);
 
 
 
