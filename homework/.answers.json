@@ -1,0 +1,9 @@
+[
+  {
+    "name": "ege",
+    "date": "2023-10-05T21:18:54.825Z"
+  },
+  {
+    "result": "According to your answers, best pet is : ${bestPet}."
+  }
+]

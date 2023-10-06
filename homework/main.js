@@ -8,53 +8,90 @@ const question = require('./question.json')
 const answers = require('./answers.json')
 
 //give opportunity to write the files
-const fs = require('fs')
+const fs = require('fs');
 
-console.log("Q - " + question.questionnaire[0].question);
-console.log(answers);
+console.log("Welcome. I hope your choice will fit you");
+const userName = prompt('What is your name?');
+const todaysDate = new Date();
+const dateTime = todaysDate.toString();
+console.log("Your startdate : ", dateTime);
+console.log("Answer your answers with yes/no please");
 
-//write all questions
-for (let index = 0; index < question.questionnaire.length; index++) {
-  console.log("Q " + index + " - " + question.questionnaire[index].question);
-}
+  console.log(userName);
+  console.log(todaysDate);
 
-//user writes name
-const name = prompt("What is your name? ");
-console.log(name);
 
-  try {
-    const data = JSON.stringify(answers, null, 2);
-    fs.writeFileSync('answers.json', data);
-    console.log('Successfull saved results to answer.json');
-  } catch (error) {
-    console.error('Failed to save results:', error);
+  function loadQuestions() {
+    try {
+      const data = fs.readFileSync("./questions.json");
+      return JSON.parse(data);
+    } catch (error) {
+      console.error("Error loading questions:", error.message);
+      return [];
+    }
   }
-    
-console.log(saveResults);
 
-/*
-//questions with score
-let running = true
-while (running) {
-  const question = prompt("Do you like walking a lot?");
-  console.log(answers);
+  function saveAnswers(answers) {
+    try {
+      fs.writeFileSync('./answers.json', JSON.stringify(answers, null, 2));
+    } catch (error) {
+      console.error('Failed to save results:', error);
+    }
+  }
 
-  if (answers === "yes") {
-    dog += 3, cat += 2, bunny += 2, fish += 0
-    running = false
-  } else if (answers === "no") {
-    dog += 0, cat += 1, bunny += 2, fish += 3
-    running = false
-  } else {
-    console.log("Wrong answer")
-  }*/
-  // Initialize an empty object to store user answers
-const userAnswers = {};
+  const questions = loadQuestions();
 
-// Loop through the questions
-for (let i = 0; i < questions.length; i++) {
-  // Use prompt to get user's answer to each question
-  const answer = prompt(questions[i]);
-  // Store the answer in the userAnswers object
-  userAnswers[`question${i + 1}`] = answer;
-}
+  // Define a pet score object to keep track of scores for each pet.
+  const petScores = {
+    Dog: 0,
+    Cat: 0,
+    Bunny: 0,
+    Fish: 0,
+  };
+
+  for (let index = 0; index < question.questions.length; index++) {
+    let running = true;
+
+    while (running) {
+      const userAnswer = prompt(question.questions[index].question).toLowerCase();
+
+      if (userAnswer === "yes") {
+        running = false;
+      } else if (userAnswer === "no") {
+        running = false;
+      } else {
+        console.log("Wrong answer");
+      }
+    }
+
+    // Update the pet scores based on the user's answers.
+    const userAnswers = question.questions[index].answers;
+
+    for (const pet in userAnswers) {
+      if (userAnswers.hasOwnProperty(pet)) {
+        if (userAnswers[pet].toLowerCase() === "yes") {
+          petScores[pet]++;
+        }
+      }
+    }
+  }
+
+  // Find the pet with the highest score.
+  let bestPet = "";
+  let highestScore = -1;
+
+  for (const pet in petScores) {
+    if (petScores.hasOwnProperty(pet)) {
+      if (petScores[pet] > highestScore) {
+        highestScore = petScores[pet];
+        bestPet = pet;
+      }
+    }
+  }
+
+console.log(`Based on your answers, the best pet for you is a ${bestPet}.`);
+saveAnswers(petScores);
+
+
+
+
