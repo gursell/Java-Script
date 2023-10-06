@@ -3,8 +3,8 @@
     {
       "question": "Do you like walking a lot?",
       "point": {
-        "Yes": {"dog": 3, "Cat": 2, "bunny": 2, "fish": 0},
-        "No": {"dog": 1, "Cat": 2, "bunny": 2, "fish": 4}
+        "Yes": {"dog": 3, "cat": 2, "bunny": 2, "fish": 0},
+        "No": {"dog": 1, "cat": 2, "bunny": 2, "fish": 4}
       }
     },
 {
