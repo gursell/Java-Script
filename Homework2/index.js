@@ -57,23 +57,30 @@ while (run) {
               console.log("Invalid choice. Choose a number that corresponds to a band.");
             }
             break;
-        
-       case "3" :
+
+            case "3" :
             let musicianName = prompt("What is the new musician's name?");
             let birthYear = prompt("Birthday?");
-            const newMusician = new Musician(musicianName, birthYear);
+            let joinYear = prompt("Joining year?");
+            let leaveYear = prompt("Leaving year?");
+            let instruments = prompt("Instruments (comma-separated)?").split(",");
+
+            const newMusician = new Musician(musicianName, birthYear, joinYear, leaveYear, instruments);
             musicians.push(newMusician);
             console.log(`Musician "${musicianName}" has been added.`);
+
             userData.responses.push({
-                choice: val.trim().toUpperCase(),
-                musician: {
-                    name: newMusician.name,
-                    birthYear: newMusician.birthYear,
-                },
+            choice: val.trim().toUpperCase(),
+            musician: {
+            name: newMusician.name,
+            birthYear: newMusician.birthYear,
+            joinYear: newMusician.joinYear,
+            leaveYear: newMusician.leaveYear,
+            instruments: newMusician.instruments,
+        },
+    });
 
-
-            });
-            break;
+break;
         case "4":
             console.log("Available musicians:");
             musicians.forEach((musician, index) => {
@@ -117,7 +124,7 @@ while (run) {
                 break;
         case "6":
         run = false;
-        console.log("Programmet avslutas.");
+        console.log("Program is ending.");
         break;
         default:
         console.log("Invalid choice. Please select a valid action (1-6)");
@@ -130,6 +137,7 @@ while (run) {
 }
 
 // Sample usage:
+/*
 const john = new Musician('John', 1980);
 const jane = new Musician('Jane', 1990);
 
@@ -143,4 +151,4 @@ console.log(john.calculateAge()); // Calculate and display John's age
 
 console.log(rockBand.members); // Display members of the Rock Band
 console.log(jane.bands); // Display bands that Jane is part of
-
+*/

@@ -1,14 +1,26 @@
 {
   "responses": [
     {
-      "choice": "1",
-      "band": {
+      "choice": "3",
+      "musician": {
         "name": "efe",
-        "formationYear": "1989"
+        "birthYear": "1989",
+        "instruments": []
       }
     },
     {
-      "choice": "1"
+      "choice": "3"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "gursel",
+        "birthYear": "1985",
+        "instruments": []
+      }
+    },
+    {
+      "choice": "3"
     }
   ]
 }

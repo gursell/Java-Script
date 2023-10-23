@@ -64,17 +64,16 @@ export default class Band {
     return this.dissolutionYear;
   }
 }
-/*
-// Example usage:
-const band1 = new band('BandName1', 'Info about Band 1', 2000);
-band1.addCurrentMember('MusicianName1', 'Info about Musician 1', 2001, ['Guitar', 'Vocals']);
-band1.addCurrentMember('MusicianName2', 'Info about Musician 2', 2002, ['Drums']);
-band1.dissolveBand(2010);
+
+// Example:
+/*const band = new band('BandName1', 'Info about Band ', 2000);
+band.addCurrentMember('MusicianName1', 'Info about Musician 1', 2001, ['Guitar', 'Vocals']);
+band.addCurrentMember('MusicianName2', 'Info about Musician 2', 2002, ['Drums']);
+band.dissolveBand(2010);
 
 const band2 = new band('BandName2', 'Info about Band 2', 2015);
 band2.addCurrentMember('MusicianName3', 'Info about Musician 3', 2016, ['Bass']);
 band2.addFormerMember('MusicianName4', 'Info about Musician 4', 2017, 2019, ['Keyboard']);
 
-band1.displayInfo();
-band2.displayInfo();
-*/
+band.displayInfo();
+band2.displayInfo();*/

@@ -9,6 +9,9 @@
 export default class Musician {
   #name
   #birthYear
+  #joinYear
+  #leaveYear
+  #instruments
   
   constructor(name, birthYear) {
     this.name = name;
@@ -56,19 +59,20 @@ export default class Musician {
     return currentYear - this.birthYear;
   }
 }
-/*
+
 // Example usage:
+/*
 const musician1 = new Musician('MusicianName1', 'Info about Musician 1', 1990);
 const musician2 = new Musician('MusicianName2', 'Info about Musician 2', 1985);
-const band1 = new Band('BandName1', 'Info about Band 1');
+const band1 = new Band('BandName1', 'Info about Band1 ');
 const band2 = new Band('BandName2', 'Info about Band 2');
 
-musician1.joinBand(band1, ['Guitar', 'Vocals']);
+musician1.joinBand(band, ['Guitar', 'Vocals']);
 musician1.playInstrument('Piano');
-musician2.joinBand(band1, ['Drums']);
+musician2.joinBand(band, ['Drums']);
 musician2.joinBand(band2, ['Bass', 'Keyboards']);
 
-musician2.leaveBand(band1);
+musician2.leaveBand(band);
 
 musician1.displayInfo();
 musician2.displayInfo();
