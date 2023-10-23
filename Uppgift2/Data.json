@@ -1,0 +1,14 @@
+{
+  "responses": [
+    {
+      "choice": "1",
+      "band": {
+        "name": "efe",
+        "formationYear": "1989"
+      }
+    },
+    {
+      "choice": "1"
+    }
+  ]
+}
