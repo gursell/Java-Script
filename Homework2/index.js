@@ -129,7 +129,7 @@ while (run) {
     fs.writeFileSync('Data.json', JSON.stringify(userData, null, 2));
 }
 
-// Sample usage
+// Sample usage:
 const john = new Musician('John', 1980);
 const jane = new Musician('Jane', 1990);
 
