@@ -1,26 +1,7 @@
 {
   "responses": [
     {
-      "choice": "3",
-      "musician": {
-        "name": "efe",
-        "birthYear": "1989",
-        "instruments": []
-      }
-    },
-    {
-      "choice": "3"
-    },
-    {
-      "choice": "3",
-      "musician": {
-        "name": "gursel",
-        "birthYear": "1985",
-        "instruments": []
-      }
-    },
-    {
-      "choice": "3"
+      "choice": "CLEAR"
     }
   ]
 }

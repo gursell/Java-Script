@@ -63,7 +63,7 @@ while (run) {
             let birthYear = prompt("Birthday?");
             let joinYear = prompt("Joining year?");
             let leaveYear = prompt("Leaving year?");
-            let instruments = prompt("Instruments (comma-separated)?").split(",");
+                let instruments = prompt("Instruments (comma-separated)?");//.split(",");
 
             const newMusician = new Musician(musicianName, birthYear, joinYear, leaveYear, instruments);
             musicians.push(newMusician);

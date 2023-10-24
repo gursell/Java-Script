@@ -9,8 +9,8 @@
 export default class Musician {
   #name
   #birthYear
-  #joinYear
-  #leaveYear
+  #currentBands
+  #previousBands
   #instruments
   
   constructor(name, birthYear) {
@@ -58,6 +58,22 @@ export default class Musician {
     const currentYear = new Date().getFullYear();
     return currentYear - this.birthYear;
   }
+/*
+  set birthYear(newbirthYear) {
+    this.#birthYear = newbirthYear;
+  }
+
+  set currentBands(newcurrentBands) {
+    this.#currentBands = newcurrentBands;
+  }
+
+  set previousBands(newpreviousBands) {
+    this.#previousBands = newpreviousBands;
+  }
+
+  set instruments(newInstruments) {
+    this.#instruments = newInstruments;
+  }*/
 }
 
 // Example usage:
