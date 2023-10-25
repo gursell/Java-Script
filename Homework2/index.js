@@ -1,5 +1,5 @@
 import PromptSync from "prompt-sync";
-import Musician from "./musiker.js";
+import Musician from "./musician.js";
 import Band from "./band.js";
 import fs from "fs" ;
 
@@ -152,3 +152,16 @@ console.log(john.calculateAge()); // Calculate and display John's age
 console.log(rockBand.members); // Display members of the Rock Band
 console.log(jane.bands); // Display bands that Jane is part of
 */
+
+const band1 = createAndAddBand("Band A", 2000, 2010);
+band1.addCurrentMember("Musician 1", 2000, ["Guitar"]);
+band1.addCurrentMember("Musician 2", 2005, ["Bass"]);
+
+const band2 = createAndAddBand("Band B", 2012, null);
+band2.addCurrentMember("Musician 3", 2012, ["Drums"]);
+
+console.log(allBands);
+
+removeBand(band1);
+
+console.log(allBands);

@@ -9,7 +9,7 @@
 //including the year the musician left the band.
 
 import fs from "fs";
-import Musician from "./musiker.js";
+import Musician from "./musician.js";
 
 export default class Band {
   #allBands = [];
@@ -77,3 +77,5 @@ band2.addFormerMember('MusicianName4', 'Info about Musician 4', 2017, 2019, ['Ke
 
 band.displayInfo();
 band2.displayInfo();*/
+
+
