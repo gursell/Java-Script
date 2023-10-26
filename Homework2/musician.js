@@ -6,19 +6,21 @@
 //List of previous bands the musician has been a part of
 //The instruments that the musician plays
 
+
 export default class Musician {
   #name
   #birthYear
   #currentBands
   #previousBands
   #instruments
+
   
-  constructor(name, birthYear) {
+  constructor(name, birthYear, currentBands, previousBands, instruments) {
     this.name = name;
     this.birthYear = birthYear;
-    this.currentBands = [];
-    this.previousBands = [];
-    this.instruments = [];
+    this.currentBands = currentBands;
+    this.previousBands = previousBands;
+    this.instruments = instruments;
   }
 
   addCurrentBand(band, joinYear, instruments) {
@@ -50,6 +52,10 @@ export default class Musician {
     };
   }
 
+  getName() {
+        return this.name;
+    }
+
   getBirthYear() {
     return this.birthYear;
   }
@@ -58,42 +64,39 @@ export default class Musician {
     const currentYear = new Date().getFullYear();
     return currentYear - this.birthYear;
   }
-/*
-  set birthYear(newbirthYear) {
-    this.#birthYear = newbirthYear;
-  }
 
-  set currentBands(newcurrentBands) {
-    this.#currentBands = newcurrentBands;
-  }
+     getJoinYear() {
+        return this.joinYear;
+    }
 
-  set previousBands(newpreviousBands) {
-    this.#previousBands = newpreviousBands;
-  }
+    getLeaveYear() {
+        return this.leaveYear;
+    }
 
-  set instruments(newInstruments) {
-    this.#instruments = newInstruments;
-  }*/
+    getInstruments() {
+        return this.instruments;
+    }
+
+    setName(name) {
+        this.name = name;
+    }
+
+    setBirthYear(birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    setJoinYear(joinYear) {
+        this.joinYear = joinYear;
+    }
+
+    setLeaveYear(leaveYear) {
+        this.leaveYear = leaveYear;
+    }
+
+    setInstruments(instruments) {
+        this.instruments = instruments;
+    }
 }
 
-// Example usage:
-/*
-const musician1 = new Musician('MusicianName1', 'Info about Musician 1', 1990);
-const musician2 = new Musician('MusicianName2', 'Info about Musician 2', 1985);
-const band1 = new Band('BandName1', 'Info about Band1 ');
-const band2 = new Band('BandName2', 'Info about Band 2');
 
-musician1.joinBand(band, ['Guitar', 'Vocals']);
-musician1.playInstrument('Piano');
-musician2.joinBand(band, ['Drums']);
-musician2.joinBand(band2, ['Bass', 'Keyboards']);
-
-musician2.leaveBand(band);
-
-musician1.displayInfo();
-musician2.displayInfo();
-
-band1.displayInfo();
-band2.displayInfo();
-*/
 

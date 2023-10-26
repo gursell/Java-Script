@@ -1,7 +1,165 @@
 {
   "responses": [
     {
-      "choice": "CLEAR"
+      "choice": "1",
+      "band": {
+        "name": "",
+        "formationYear": "6"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "5"
+    },
+    {
+      "choice": "5"
+    },
+    {
+      "choice": "1",
+      "band": {
+        "name": "efe",
+        "formationYear": "1234"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "2"
+    },
+    {
+      "choice": "6"
+    },
+    {
+      "choice": "1",
+      "band": {
+        "name": "efe",
+        "formationYear": "1222"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "2"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "efe",
+        "birthYear": "123",
+        "instruments": "rrr"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "4"
+    },
+    {
+      "choice": "5"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "eee",
+        "birthYear": "123",
+        "instruments": "ddd"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "5"
+    },
+    {
+      "choice": "1",
+      "band": {
+        "name": "efe",
+        "formationYear": "1221"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "2"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "efeee",
+        "birthYear": "1234",
+        "instruments": "sss"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "1",
+      "band": {
+        "name": "osman",
+        "formationYear": "1789"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "1",
+      "band": {
+        "name": "peter",
+        "formationYear": "1965"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "2"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "götran gunn",
+        "birthYear": "1967",
+        "instruments": "piano"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "4"
+    },
+    {
+      "choice": "1",
+      "band": {
+        "name": "apokalips",
+        "formationYear": "1989"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "Erik Bogren",
+        "birthYear": "1945",
+        "instruments": "violin"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "5"
     }
   ]
 }

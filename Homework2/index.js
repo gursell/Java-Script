@@ -8,18 +8,28 @@ const prompt = PromptSync({sigint:true});
 const musicians = [];
 const bands = [];
 
-const userData = { responses: [] };
+//const userData = { responses: [] };
 
+// Load existing data from a JSON file, if it exists
+let userData;
+try {
+  const data = fs.readFileSync('Data.json', 'utf8');
+  userData = JSON.parse(data);
+} catch (err) {
+  userData = { responses: [] };
+}
+//
 
 let run = true;
 while (run) {
+
     console.log(`
     New
-    1. Add a new band
+    1. Add a new group
     2. Remove a group
     3. Create a new musician
     4. Remove musician
-    5. Update information
+    5. Update musician information
     6. Exit the program
 
       
@@ -32,7 +42,13 @@ while (run) {
         case "1" :
             let bandName = prompt("What is the name of new group?");
             let formationYear = prompt("Year the band was formed?");
-            const newBand = new Band(bandName, formationYear);
+            let dissolutionYear = prompt("Year the band was dissolved?");
+            let currentMembers = prompt("Who are the current members, what is joining year and which intruments?");
+            let previousMembers = prompt("Who are the former members, what is leaving year? ");
+
+                //let dissolution year ekle
+            const newBand = new Band(bandName, formationYear, dissolutionYear, currentMembers, previousMembers);
+                //buraya da dis. ekle
             bands.push(newBand);
             console.log(`Band "${bandName}" has been added.`);
             userData.responses.push({
@@ -63,7 +79,8 @@ while (run) {
             let birthYear = prompt("Birthday?");
             let joinYear = prompt("Joining year?");
             let leaveYear = prompt("Leaving year?");
-                let instruments = prompt("Instruments (comma-separated)?");//.split(",");
+            let instruments = prompt("Instruments (comma-separated)?");
+            //.split(",");
 
             const newMusician = new Musician(musicianName, birthYear, joinYear, leaveYear, instruments);
             musicians.push(newMusician);
@@ -103,7 +120,8 @@ break;
             if (musicianIndexToUpdate > 0 && musicianIndexToUpdate <= musicians.length) {
                   const musician = musicians[musicianIndexToUpdate - 1];
                   console.log(`Vald musiker: ${musician.name}`);
-                  let updateChoice = prompt("What do you want to update?\n1. Name\n2. birthYear\nVal -> ");
+                let updateChoice = prompt("What do you want to update?\n1. Name\n2. birthYear\n3. joinYear\n4. leaveYear\nVal -> ");
+                //yukarida joining, instrument i ekle digerleri gibi
              switch (updateChoice.trim()) {
                 case "1":
                 const newName = prompt("Enter the new name: ");
@@ -114,7 +132,19 @@ break;
                 const newBirthYear = prompt("Enter the new birth year: ");
                 musician.birthYear = newBirthYear;
                 console.log(`The birth year has been updated to "${newBirthYear}".`);
+                 break;
+               //
+               case "3":
+                const newJoinYear = prompt("Enter the new joining year: ");
+                musician.joinYear = newJoinYear;
+                console.log(`The joining year has been updated to "${newJoinYear}".`);
                 break;
+               case "4":
+                const newLeaveYear = prompt("Enter the new leaving year: ");
+                musician.leaveYear = newLeaveYear;
+                console.log(`The leaving year has been updated to "${newLeaveYear}".`);
+                break;
+                //
                 default:
                 console.log("Invalid choice.");
                  }
@@ -136,32 +166,6 @@ break;
     fs.writeFileSync('Data.json', JSON.stringify(userData, null, 2));
 }
 
-// Sample usage:
-/*
-const john = new Musician('John', 1980);
-const jane = new Musician('Jane', 1990);
 
-const rockBand = new Band('Rock Band');
-const jazzBand = new Band('Jazz Band');
 
-addMusicianToBand(john, rockBand);
-addMusicianToBand(jane, jazzBand);
 
-console.log(john.calculateAge()); // Calculate and display John's age
-
-console.log(rockBand.members); // Display members of the Rock Band
-console.log(jane.bands); // Display bands that Jane is part of
-*/
-
-const band1 = createAndAddBand("Band A", 2000, 2010);
-band1.addCurrentMember("Musician 1", 2000, ["Guitar"]);
-band1.addCurrentMember("Musician 2", 2005, ["Bass"]);
-
-const band2 = createAndAddBand("Band B", 2012, null);
-band2.addCurrentMember("Musician 3", 2012, ["Drums"]);
-
-console.log(allBands);
-
-removeBand(band1);
-
-console.log(allBands);

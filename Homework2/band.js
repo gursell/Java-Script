@@ -8,8 +8,6 @@
 //List of former members with the same information for each musician as for current members,
 //including the year the musician left the band.
 
-import fs from "fs";
-import Musician from "./musician.js";
 
 export default class Band {
   #allBands = [];
@@ -65,17 +63,7 @@ export default class Band {
   }
 }
 
-// Example:
-/*const band = new band('BandName1', 'Info about Band ', 2000);
-band.addCurrentMember('MusicianName1', 'Info about Musician 1', 2001, ['Guitar', 'Vocals']);
-band.addCurrentMember('MusicianName2', 'Info about Musician 2', 2002, ['Drums']);
-band.dissolveBand(2010);
 
-const band2 = new band('BandName2', 'Info about Band 2', 2015);
-band2.addCurrentMember('MusicianName3', 'Info about Musician 3', 2016, ['Bass']);
-band2.addFormerMember('MusicianName4', 'Info about Musician 4', 2017, 2019, ['Keyboard']);
 
-band.displayInfo();
-band2.displayInfo();*/
 
 
