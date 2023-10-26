@@ -46,9 +46,7 @@ while (run) {
             let currentMembers = prompt("Who are the current members, what is joining year and which intruments?");
             let previousMembers = prompt("Who are the former members, what is leaving year? ");
 
-                //let dissolution year ekle
             const newBand = new Band(bandName, formationYear, dissolutionYear, currentMembers, previousMembers);
-                //buraya da dis. ekle
             bands.push(newBand);
             console.log(`Band "${bandName}" has been added.`);
             userData.responses.push({
@@ -121,7 +119,6 @@ break;
                   const musician = musicians[musicianIndexToUpdate - 1];
                   console.log(`Vald musiker: ${musician.name}`);
                 let updateChoice = prompt("What do you want to update?\n1. Name\n2. birthYear\n3. joinYear\n4. leaveYear\nVal -> ");
-                //yukarida joining, instrument i ekle digerleri gibi
              switch (updateChoice.trim()) {
                 case "1":
                 const newName = prompt("Enter the new name: ");
@@ -133,7 +130,6 @@ break;
                 musician.birthYear = newBirthYear;
                 console.log(`The birth year has been updated to "${newBirthYear}".`);
                  break;
-               //
                case "3":
                 const newJoinYear = prompt("Enter the new joining year: ");
                 musician.joinYear = newJoinYear;
@@ -144,7 +140,6 @@ break;
                 musician.leaveYear = newLeaveYear;
                 console.log(`The leaving year has been updated to "${newLeaveYear}".`);
                 break;
-                //
                 default:
                 console.log("Invalid choice.");
                  }

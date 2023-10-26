@@ -160,6 +160,52 @@
     },
     {
       "choice": "5"
+    },
+    {
+      "choice": "1",
+      "band": {
+        "name": "Jaxzz1",
+        "formationYear": "1778"
+      }
+    },
+    {
+      "choice": "1"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "Johan",
+        "birthYear": "1978",
+        "instruments": "piano"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "Annelie",
+        "birthYear": "1993",
+        "instruments": "violin"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "3",
+      "musician": {
+        "name": "Anna",
+        "birthYear": "1978",
+        "instruments": "piano"
+      }
+    },
+    {
+      "choice": "3"
+    },
+    {
+      "choice": "5"
     }
   ]
 }
