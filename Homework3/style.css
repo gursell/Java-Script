@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(218, 219, 235);
+  font-family: 'Poiret One', sans-serif;
+}
+
+nav {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  padding: 1vh 0;
+  background-color: rgba(14, 11, 15, 0.6);
+  display: flex;
+  justify-content: center;
+}
+
+nav>a {
+  font-family: 'Spirax', sans-serif;
+  margin: 0 5vw;
+  font-size: 5vh;
+  color: white;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Spirax', sans-serif;
+  font-size: 10vh;
+  color: rgb(70, 40, 202);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Players</title>
+  <link rel="stylesheet" href="newPlayers.css">
+</head>
+<body>
+  <h1>Selected Players</h1>
+  <div id="selectedPlayers"></div>
+  <a href="tictactoe.html">Back to Tic Tac Toe</a>
+
+  <div class="container">
+
+
+    <h1>Tic Tac Toe</h1>
+    <h2>Choose name for player X and O</h2>
+    <label for="playerXName">Player X:</label>
+    <input type="text" id="playerXName" placeholder="Enter name">
+
+    <br>
+
+    <label for="playerOName">Player O:</label>
+    <select id="playerOName">
+      <option value="Kalle">Kalle</option>
+      <option value="Alex">Alex</option>
+      <option value="Josef">Josef</option>
+      <option value="Anneli">Anneli</option>
+      <option value="Nil">Nil</option>
+
+    </select>
+
+    <br>
+    <a href="tictactoe.html" style="width: 30%;"><button onclick="startGame()" class="submit">Show Players</button></a>
+
+
+    <script>
+
+      function startGame() {
+
+        const playerXName = document.getElementById('playerXName').value;
+        const playerOName = document.getElementById('playerOName').value;
+
+
+        localStorage.setItem('playerXName', playerXName);
+        localStorage.setItem('playerOName', playerOName);
+        alert('Player X: ' + playerXName + '\nPlayer O: ' + playerOName);
+        window.location.href = 'tictactoe.html';
+      }
+
+    </script>
+    <nav>
+      <section>
+
+        <a href="main.html">Start sida</a>
+      </section>
+    </nav>
+  </div>
+</body>
+
+</html>
