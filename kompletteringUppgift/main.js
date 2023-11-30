@@ -1,6 +1,31 @@
 import { createInterface } from 'readline';
-import EventTicket, { saveData as _saveData, loadData as _loadData } from 'EventTicket.js';
-import User, { saveData as __saveData, loadData as __loadData } from 'User.js';
+
+
+class EventTicket {
+    constructor(id, eventName, price, eventTime, buyerId) {
+        this.id = id;
+        this.eventName = eventName;
+        this.price = price;
+        this.eventTime = eventTime;
+        this.buyerId = buyerId;
+    }
+}
+
+class User {
+    constructor(id, username, password, email, phone) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.tickets = [];
+    }
+
+    buyTicket(eventTicket) {
+        this.tickets.push(eventTicket);
+        console.log(`Ticket purchased for ${eventTicket.eventName}.`);
+    }
+}
 
 class Program {
     constructor() {
@@ -10,17 +35,29 @@ class Program {
         this.rl = createInterface({
             input: process.stdin,
             output: process.stdout
-        });
+    });
     }
 
     saveData() {
-        __saveData(this.users);
-        _saveData(this.eventTickets);
+        const dataToSave = {
+            users: this.users,
+            eventTickets: this.eventTickets
+        };
+        const json = JSON.stringify(dataToSave, null, 2);
+        // Write the JSON data to a file or use any preferred storage mechanism.
+        // For simplicity, I'll print the JSON data here.
+        console.log(json);
     }
 
     loadData() {
-        this.users = __loadData();
-        this.eventTickets = _loadData();
+        // Load data from storage (e.g., file) and initialize users and eventTickets.
+        // For simplicity, I'll assume that the data is hardcoded here.
+        const data = {
+            users: [],
+            eventTickets: []
+        };
+        this.users = data.users.map(user => new User(user.id, user.username, user.password, user.email, user.phone));
+        this.eventTickets = data.eventTickets.map(ticket => new EventTicket(ticket.id, ticket.eventName, ticket.price, ticket.eventTime, ticket.buyerId));
     }
 
     createUserAccount() {
@@ -57,7 +94,7 @@ class Program {
             const newTicket = new EventTicket(id, eventName, price, eventTime, this.currentUser.id);
             this.eventTickets.push(newTicket);
 
-            console.log('Ticket purchased successfully!');
+            this.currentUser.buyTicket(newTicket);
         } else {
             console.log('You need to log in first.');
         }
@@ -80,7 +117,10 @@ class Program {
 
         while (true) {
             console.log('\n1. Create Account\n2. Log In\n3. Buy Ticket\n4. View Purchased Tickets\n5. Exit');
-            const choice = this.rl.questionSync('Enter your choice: ');
+            
+            const choice = readlineSync.question('Enter your choice: ');
+
+            //const choice = question('Enter your choice: ');
 
             switch (choice) {
                 case '1':
@@ -109,3 +149,7 @@ class Program {
 
 const program = new Program();
 program.run();
+
+
+
+

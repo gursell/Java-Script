@@ -1,5 +1,6 @@
 import { writeFileSync, readFileSync } from 'fs';
 
+
 class EventTicket {
     constructor(id, eventName, price, eventTime, buyerId = null) {
         this.id = id;
@@ -37,3 +38,7 @@ class EventTicket {
 }
 
 export default EventTicket;
+
+
+
+
