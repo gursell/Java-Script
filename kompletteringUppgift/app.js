@@ -33,13 +33,13 @@ class TicketApp {
   }
 
   showMainMenu() {
-    console.log('Welcome! Please choose an option:');
+    console.log('Welcome! Could you please select an option?:');
     console.log('1. Create New Account');
     console.log('2. Buyer Login');
     console.log('3. Admin Login');
     console.log('4. Checkout');
   
-    const choice = parseInt(prompt('Enter your choice(1-4): '), 10);
+    const choice = parseInt(prompt('Please enter your choice(1-4): '), 10);
     console.log(`Your choice: ${choice}`); 
   
     switch (choice) {
@@ -57,35 +57,35 @@ class TicketApp {
         console.log('Check outing...');
         break;
       default:
-        console.log('Invalid option. Try again.');
+        console.log('Invalid option. Please try again.');
         this.showMainMenu();
     }
   }
   
   createAccount() {
-    const username = prompt('Enter username: ');
-    const password = prompt('Enter password: ');
-    const email = prompt('Enter email: ');
-    const id = prompt('Enter ID: ');
-    const phone=prompt('Telephone: ');
+    const username = prompt('Enter your username: ');
+    const password = prompt('Enter your password: ');
+    const email = prompt('Enter your email address: ');
+    const id = prompt('Enter your ID: ');
+    const phone=prompt('Enter your telephone number: ');
 
     const newUser = new User(username, password, email, id);
     this.users.push(newUser);
-    console.log('New account created!');
+    console.log('Congragulations! New account created!');
     this.saveToFiles();
     this.showMainMenu();
   }
 
   userLogin() {
-    const username = prompt('Enter username: ');
-    const password = prompt('Enter password: ');
+    const username = prompt('Enter your username: ');
+    const password = prompt('Enter your password: ');
   
     const user = this.users.find(u => u.username === username && u.password === password);
     if (user) {
       console.log('Login successful. Welcome, ' + user.username + '!');
       this.showMainMenu(user);
     } else {
-      console.log('Wrong username or password. Try again!');
+      console.log('Incorrect username or password. Please try again!');
       console.log('Registered Users:', this.users);
       this.showMainMenu();
     }
@@ -109,7 +109,7 @@ class TicketApp {
           console.log('Checking out...');
           break;
         default:
-          console.log('Invalid option. Try again!');
+          console.log('Invalid option. Please try again!');
           this.showMainMenu(user);
       }
      } else {
@@ -137,7 +137,7 @@ class TicketApp {
         console.log('Exiting...');
         break;
       default:
-        console.log('Invalid option. Try again!.');
+        console.log('Invalid option. Please try again!.');
         this.showMainMenu();
     }
       
@@ -179,8 +179,8 @@ class TicketApp {
    
   buyTicket(user) {
     this.showEventTickets();
-    const eventName = prompt('Enter the event name: ');
-    const quantity = parseInt(prompt('How many tickets do you want to buy: '), 10);
+    const eventName = prompt('Please enter the event name: ');
+    const quantity = parseInt(prompt('How many tickets do you want to buy?: '), 10);
 
     const event = this.tickets.find(ticket => ticket.eventName === eventName);
     if (event && event.availableTickets >= quantity) {
@@ -224,7 +224,7 @@ class TicketApp {
         console.log('Exiting...');
         break;
       default:
-        console.log('Invalid option. Try again!');
+        console.log('Invalid option. Please try again!');
         this.showAdminMenu();
     }
   }
