@@ -1,7 +1,7 @@
 import promptSync from 'prompt-sync';
 import fs from 'fs';
-import EventTicket from './EventTicket.js';
-import User from './User.js';
+import EventTicket from './eventticket.js';
+import User from './user.js';
 
 const prompt = promptSync();
 
@@ -20,26 +20,30 @@ class TicketApp {
       this.users = JSON.parse(usersData).map(userData => new User(userData.username, userData.password, userData.email, userData.id, userData.tickets));
 
       const ticketsData = fs.readFileSync('ticketsData.json', 'utf8');
-      this.tickets = JSON.parse(ticketsData).map(ticketData => new EventTicket(ticketData.eventName, ticketData.availableTickets));
+      this.tickets = JSON.parse(ticketsData).map(ticketData => new EventTicket(ticketData.eventId,ticketData.eventName, ticketData.price,ticketData.eventTime, ticketData.buyerId));
     } catch (error) {
+      console.error('File read error:', error);
       this.saveToFiles();
     }
   }
 
   saveToFiles() {
-    
+    try {
     fs.writeFileSync('usersData.json', JSON.stringify(this.users), 'utf8');
     fs.writeFileSync('ticketsData.json', JSON.stringify(this.tickets), 'utf8');
+  }catch (error) {
+    console.error('File write error:', error);
+}
   }
 
   showMainMenu() {
-    console.log('Welcome! Could you please select an option?:');
+    console.log('Welcome! Please choose an option:');
     console.log('1. Create New Account');
     console.log('2. Buyer Login');
     console.log('3. Admin Login');
     console.log('4. Checkout');
   
-    const choice = parseInt(prompt('Please enter your choice(1-4): '), 10);
+    const choice = parseInt(prompt('Enter your choice(1-4): '), 10);
     console.log(`Your choice: ${choice}`); 
   
     switch (choice) {
@@ -57,35 +61,35 @@ class TicketApp {
         console.log('Check outing...');
         break;
       default:
-        console.log('Invalid option. Please try again.');
+        console.log('Invalid option. Try again.');
         this.showMainMenu();
     }
   }
   
   createAccount() {
-    const username = prompt('Enter your username: ');
-    const password = prompt('Enter your password: ');
-    const email = prompt('Enter your email address: ');
-    const id = prompt('Enter your ID: ');
-    const phone=prompt('Enter your telephone number: ');
+    const username = prompt('Enter username: ');
+    const password = prompt('Enter password: ');
+    const email = prompt('Enter email: ');
+    const id = prompt('Enter ID: ');
+    const phone=prompt('Telephone: ');
 
     const newUser = new User(username, password, email, id);
     this.users.push(newUser);
-    console.log('Congragulations! New account created!');
+    console.log('New account created!');
     this.saveToFiles();
     this.showMainMenu();
   }
 
   userLogin() {
-    const username = prompt('Enter your username: ');
-    const password = prompt('Enter your password: ');
+    const username = prompt('Enter username: ');
+    const password = prompt('Enter password: ');
   
     const user = this.users.find(u => u.username === username && u.password === password);
     if (user) {
       console.log('Login successful. Welcome, ' + user.username + '!');
       this.showMainMenu(user);
     } else {
-      console.log('Incorrect username or password. Please try again!');
+      console.log('Wrong username or password. Try again!');
       console.log('Registered Users:', this.users);
       this.showMainMenu();
     }
@@ -109,8 +113,8 @@ class TicketApp {
           console.log('Checking out...');
           break;
         default:
-          console.log('Invalid option. Please try again!');
-          this.showMainMenu(user);
+          console.log('Invalid option. Try again!');
+          this.showMainMenu();
       }
      } else {
       console.log('Welcome! Please choose an option:');
@@ -137,7 +141,7 @@ class TicketApp {
         console.log('Exiting...');
         break;
       default:
-        console.log('Invalid option. Please try again!.');
+        console.log('Invalid option. Try again!.');
         this.showMainMenu();
     }
       
@@ -145,18 +149,26 @@ class TicketApp {
     }
     addNewEvent(user) {
       console.log('Enter details for the new event:');
+      const eventId   =prompt('Event ID: ');
       const eventName = prompt('Event Name: ');
-      const eventDate = prompt('Event Date: ');
+      const eventTime = prompt('Event Date: ');
+      const price     =prompt('Price: ');
+      const buyerId   =prompt('Buyer ID: ');
     
       if (!user.hasOwnProperty('events')) {
-        user.tickets = [];
+        user.events = [];
       }
-      const newEvent = { name: eventName, date: eventDate };
-      user.tickets.push(newEvent);
-      this.saveUserData(user);
+    
+      const newEvent = { id :eventId, name: eventName, date: eventTime, price: price, buyerId: buyerId };
+      user.events.push(newEvent);
+      this.saveToFiles();
+      this.tickets.push(newEvent);
+      this.saveUserData();
     
       console.log('New event added successfully!');
     }
+    
+    
     saveUserData(user) {
       const userDataPath = 'ticketsData.json';
       let ticketData = {};
@@ -170,30 +182,29 @@ class TicketApp {
         if (!ticketData[user.username]) {
           ticketData[user.username] = { events: [] };
         }
-        ticketData[user.username].events.push(...user.events);
+        ticketData[user.username].events.push(user.events);
       }
   
       fs.writeFileSync(userDataPath, JSON.stringify(ticketData, null, 2));
     }
+    buyTicket(user) {
+      this.showEventTickets();
+      const eventName = prompt('Enter the event name: ');
+      const buyerId = prompt('Enter your BuyerID: '); 
     
-   
-  buyTicket(user) {
-    this.showEventTickets();
-    const eventName = prompt('Please enter the event name: ');
-    const quantity = parseInt(prompt('How many tickets do you want to buy?: '), 10);
-
-    const event = this.tickets.find(ticket => ticket.eventName === eventName);
-    if (event && event.availableTickets >= quantity) {
-      this.tickets;
-      user.buyTicket(event, quantity);
-      event.availableTickets -= quantity;
-      this.saveToFiles();
-    } else {
-      console.log('The specified event could not be found or there are not enough tickets. Try again!');
+      const event = this.tickets.find(ticket => ticket.eventName.trim().toLowerCase() === eventName.trim().toLowerCase());
+    
+      if (event) {
+        user.buyTicket(event, buyerId);
+        this.saveToFiles();
+        console.log(`Ticket purchased for ${event.eventName}`);
+      } else {
+        console.log('The specified event could not be found. Try again!');
+      }
+    
+      this.showMainMenu(user);
     }
-    this.showMainMenu(user);
-  }
-
+    
 
   adminLogin() {
     const adminUsername = prompt('Admin UserName: ');
@@ -224,7 +235,7 @@ class TicketApp {
         console.log('Exiting...');
         break;
       default:
-        console.log('Invalid option. Please try again!');
+        console.log('Invalid option. Try again!');
         this.showAdminMenu();
     }
   }
@@ -241,17 +252,18 @@ class TicketApp {
 
   showEventTickets() {
     console.log('--- Event Ticket ---');
-    this.tickets.forEach(tickets => {
-      console.log(`ID: ${tickets.id}, Event Name: ${tickets.eventName}, Prise: ${tickets.price}, Time: ${tickets.eventTime}, Coordinator ID: ${tickets.coordinatorId}, Stok: ${tickets.availableTickets}`);
+    this.tickets.forEach(ticket => {
+      console.log(`ID: ${ticket.eventId}, Event Name: ${ticket.eventName}, Price: ${ticket.price}, Time: ${ticket.eventTime}, Buyer ID: ${ticket.buyerId}`);
     
     });
-    //console.log('--');
-   // this.showAdminMenu();
+    //this.showAdminMenu();
+
   }
 }
     
 
 const app = new TicketApp();
+
 
 
 
