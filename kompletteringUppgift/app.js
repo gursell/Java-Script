@@ -1,7 +1,7 @@
 import promptSync from 'prompt-sync';
 import fs from 'fs';
-import EventTicket from './eventticket.js';
-import User from './user.js';
+import EventTicket from './EventTicket.js';
+import User from './User.js';
 
 const prompt = promptSync();
 

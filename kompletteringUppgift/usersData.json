@@ -1,1 +1,1 @@
-[{"id":"103","username":"efe","password":"1234","email":"ggg@gmail.com","phone":[],"tickets":[]},{"id":"105","username":"esra","password":"1357","email":"gesra@gmail.com","tickets":[]}]
+[{"id":"103","username":"efe","password":"1234","email":"ggg@gmail.com","phone":[],"tickets":[]},{"id":"105","username":"esra","password":"1357","email":"gesra@gmail.com","phone":[],"tickets":[]},{"id":"107","username":"alpaslan","password":"3579","email":"aa@gmail.com","tickets":[],"events":[{"id":"107","name":"Playing Tennis","date":"05.12.2023","price":"150$","buyerId":"107"}]}]
